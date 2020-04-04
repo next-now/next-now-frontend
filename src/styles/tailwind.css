@@ -9,7 +9,7 @@
 /* https://tailwindcss.com/docs/functions-and-directives/#theme */
 body {
   font-family: 'Montserrat', sans-serif;
-  color: theme('colors.amazee.dark');
+  color: theme('colors.nextnow.dark');
 }
 
 h1 {

@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-amazee",
+  "name": "next-now-frontend",
   "private": true,
-  "description": "Gatsby starter for Amazee Labs projects",
+  "description": "Next Now: Frontend",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -103,10 +103,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AmazeeLabs/gatsby-starter-amazee"
+    "url": "https://github.com/next-now/next-now-frontend"
   },
   "bugs": {
-    "url": "https://github.com/AmazeeLabs/gatsby-starter-amazee/issues"
+    "url": "https://github.com/next-now/next-now-frontend/issues"
   },
   "husky": {
     "hooks": {

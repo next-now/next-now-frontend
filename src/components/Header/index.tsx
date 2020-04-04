@@ -8,9 +8,11 @@ import LanguageSwitcher from '../LanguageSwitcher';
 const Header: React.FC = () => {
   const { t } = useTranslation();
   return (
-    <div className="page-centered font-black bg-amazee-yellow text-amazee-dark">
+    <div className="page-centered font-black bg-nextnow-yellow text-nextnow-dark">
       <div className=" sm:flex sm:justify-between py-3">
-        <header className="text-2xl">{t('Next Now: Life-long solidarity')}</header>
+        <header className="text-2xl">
+          {t('Next Now: Life-long solidarity')}
+        </header>
         <LanguageSwitcher />
       </div>
     </div>

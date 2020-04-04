@@ -12,7 +12,7 @@ module.exports = {
       colors: {
         // TODO: Adjust color variables to match the project style guide.
         // https://tailwindcss.com/docs/customizing-colors
-        amazee: {
+        nextnow: {
           yellow: '#ffcc4f',
           gray: '#64675E',
           dark: '#2c3539',

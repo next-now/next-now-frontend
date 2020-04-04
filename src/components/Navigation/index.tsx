@@ -41,13 +41,13 @@ const Navigation: React.FC = () => {
     <nav
       role="navigation"
       aria-labelledby="navigation"
-      className="page-centered bg-amazee-dark text-white py-2 sm:py-0"
+      className="page-centered bg-nextnow-dark text-white py-2 sm:py-0"
     >
       <h2 id="navigation" className="sr-only">
         Main navigation
       </h2>
       <select
-        className="sm:hidden block appearance-none w-full bg-amazee-dark border-2 border-amazee-yellow px-3 py-2"
+        className="sm:hidden block appearance-none w-full bg-nextnow-dark border-2 border-nextnow-yellow px-3 py-2"
         onChange={event => navigate(event.target.value)}
       >
         {items.map(item => (
@@ -61,10 +61,10 @@ const Navigation: React.FC = () => {
           <li key={item.path}>
             <Link
               to={item.path}
-              className={`block mx-5 first:ml-0 py-2 hover:text-amazee-yellow border-solid border-b-4 ${classnames(
+              className={`block mx-5 first:ml-0 py-2 hover:text-nextnow-yellow border-solid border-b-4 ${classnames(
                 {
-                  'border-amazee-dark': !isSubPath(currentPath, item.path),
-                  'border-amazee-yellow': isSubPath(currentPath, item.path),
+                  'border-nextnow-dark': !isSubPath(currentPath, item.path),
+                  'border-nextnow-yellow': isSubPath(currentPath, item.path),
                 }
               )}`}
             >

@@ -5,7 +5,7 @@ export default {
 };
 
 // TODO: Change project name in Storybook.
-const projectName = 'Amazee’s Gatsby Starter';
+const projectName = 'Next Now';
 
 export const toProject = () => (
   <div className="p-8 max-w-full">

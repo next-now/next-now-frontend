@@ -4,7 +4,7 @@ import logo from './logo.svg';
 
 const theme = create({
   base: 'light',
-  brandTitle: 'Amazee Starter',
+  brandTitle: 'Next Now',
   // Note: this logo will need to be imported in preview.js in order for webpack
   // to bundle the image with Storybook.
   brandImage: logo,
