@@ -8,10 +8,16 @@ const LoginPage: React.FC = () => {
   return (
     <>
       <h1 className="mb-8">{t('Login')}</h1>
-      <p>{t('Enter your username and password.')}</p>
+      <p className="mb-4">
+        {t(
+          'Enter your username and password to gain access to the dashboard and your token data.'
+        )}
+      </p>
       <Formik initialValues={{}} onSubmit={() => {}}>
-        <TextField name="username" label="Username" />
-        <TextField name="password" label="Password" type="password" />
+        <form>
+          <TextField name="username" label="Username" />
+          <TextField name="password" label="Password" type="password" />
+        </form>
       </Formik>
     </>
   );
