@@ -15,17 +15,17 @@ dotenvConfig({
 });
 
 // TODO: Adjust this depending on the hosting setup and project repository name.
-export const pathPrefix = '/gatsby-starter-amazee';
+export const pathPrefix = '/next-now-frontend';
 
 export const siteMetadata = {
+  title: 'Next Now: Life-long solidarity',
+  titleTemplate: '%s - Next Now',
+  description: 'A blockchain-based solidarity reward solution.',
+  url: 'http://localhost',
   // TODO: Adjust the static site navigation or remove it entirely.
   navigation: [
     { path: '/', label: 'Home' },
-    { path: '/films', label: 'Films' },
-    {
-      path: '/persons',
-      label: 'Characters',
-    },
+    { path: '/login', label: 'Login' },
   ],
 };
 
