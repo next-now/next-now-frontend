@@ -1,19 +1,27 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'gatsby';
 
 /**
  * A simple button component.
  */
 const Button: React.FC<{
   text: string;
-}> = ({ text }) => {
+  path?: string;
+}> = ({ text, path }) => {
   const { t } = useTranslation();
   return (
     <button
       className="flex items-center px-3 py-2 m-3 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
       type="button"
     >
-      {t(text)}
+      {path ? (
+        <Link to={path} className="hover:bg-gray-100">
+          {t(text)}
+        </Link>
+      ) : (
+        t(text)
+      )}
     </button>
   );
 };

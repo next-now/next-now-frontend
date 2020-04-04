@@ -25,7 +25,8 @@ export const siteMetadata = {
   // TODO: Adjust the static site navigation or remove it entirely.
   navigation: [
     { path: '/', label: 'Home' },
-    { path: '/login', label: 'Login' },
+    { path: '/wallet', label: 'Wallet' },
+    { path: '/dashboard', label: 'Dashboard' },
   ],
 };
 

@@ -8,8 +8,8 @@ const IndexPage: React.FC = () => {
     <>
       <h1 className="mb-8">{t('Welcome')}</h1>
       <p>{t('Collaborate and level-up.')}</p>
-      <Button text="Login" />
-      <Button text="Sign up" />
+      <Button text="Login" path="/login" />
+      <Button text="Sign up" path="/sign-up" />
     </>
   );
 };
