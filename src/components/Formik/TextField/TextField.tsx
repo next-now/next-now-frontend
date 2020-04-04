@@ -32,6 +32,7 @@ const TextField: React.FC<TextFieldProps> = props => {
         disabled={props.disabled}
         placeholder={props.placeholder}
         type={props.type}
+        required={props.required}
         {...field}
         className={classNames(
           'border border-gray-300 focus:border-dark-blue-400 rounded-sm',
