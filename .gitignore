@@ -1,0 +1,28 @@
+# Hidden OS files
+.DS_Store
+._*
+Thumbs.db
+
+# Dependency tools
+node_modules/
+yarn-debug.log
+yarn-error.log
+
+# IDEs
+.idea
+schema.graphql
+.vscode
+
+# Testing tools
+.eslintcache
+/cypress/screenshots
+
+# Gatsby
+.cache/
+public
+
+# Storybook
+storybook-static
+
+# Environment specific configuration
+.env
