@@ -35,6 +35,15 @@ export const plugins = [
   'gatsby-plugin-layout',
   'gatsby-plugin-postcss',
   'gatsby-plugin-react-helmet',
+  {
+    resolve: 'gatsby-source-rest-api',
+    options: {
+      endpoints: [
+        'https://jsonplaceholder.typicode.com/posts',
+        'https://jsonplaceholder.typicode.com/users',
+      ],
+    },
+  },
   // TODO: Update the data source configuration's typeName and fieldName.
   {
     resolve: 'gatsby-source-graphql',
