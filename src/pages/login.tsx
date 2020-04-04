@@ -46,13 +46,13 @@ const LoginPage: React.FC = () => {
         username: '',
         password: '',
       }} onSubmit={onSubmit}>
-        {(props: FormikProps<LoginValues>) => (
-          <Form>
-            <TextField name="username" label="Username" />
-            <TextField name="password" label="Password" type="password" />
-            <Button text="Forgot password?" />
-            <Submit text="Login" />
-          </Form>)}
+        {() => (
+        <Form>
+          <TextField name="username" label="Username" />
+          <TextField name="password" label="Password" type="password" />
+          <Button text="Forgot password?" />
+          <Submit text="Login" />
+        </Form>)}
       </Formik>
     </>
   );
