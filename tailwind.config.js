@@ -13,10 +13,10 @@ module.exports = {
         // TODO: Adjust color variables to match the project style guide.
         // https://tailwindcss.com/docs/customizing-colors
         nextnow: {
-          yellow: '#ffcc4f',
-          gray: '#64675E',
-          dark: '#2c3539',
-          blue: '#60839b',
+          'blue-bayoux': '#405E74',
+          'gray-abbey': '#4B5153',
+          dark: '#283133',
+          'blue-jelly': '#2D79AF',
         },
       },
     },

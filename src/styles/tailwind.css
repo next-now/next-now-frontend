@@ -9,7 +9,8 @@
 /* https://tailwindcss.com/docs/functions-and-directives/#theme */
 body {
   font-family: 'Montserrat', sans-serif;
-  color: theme('colors.nextnow.dark');
+  color: theme('colors.nextnow.blue-jelly');
+  background-color: theme('colors.nextnow.dark');
 }
 
 h1 {
@@ -42,7 +43,8 @@ strong {
  */
 .page-centered {
   @apply px-2;
-  & > * {
+
+  &>* {
     @apply mx-auto max-w-6xl;
   }
 }
