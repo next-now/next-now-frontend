@@ -8,9 +8,11 @@ import TextField from '../components/Formik/TextField/TextField';
 const LoginPage: React.FC = () => {
   const { t } = useTranslation();
 
-  const onSubmit = () => {
-    // TODO: const data = await fetch('test');
-    console.log('submit happened');
+  const onSubmit = (values, actions) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      actions.setSubmitting(false);
+    }, 1000);
   };
 
   return (
@@ -22,12 +24,12 @@ const LoginPage: React.FC = () => {
         )}
       </p>
       <Formik initialValues={{}} onSubmit={onSubmit}>
-        <form>
+        <div>
           <TextField name="username" label="Username" />
           <TextField name="password" label="Password" type="password" />
           <Button text="Forgot password?" />
           <Submit text="Login" />
-        </form>
+        </div>
       </Formik>
     </>
   );
