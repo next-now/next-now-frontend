@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{tSmk:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),l=a("9kay"),r=a("B3q3");t.default=function(){var e=Object(l.b)().t;return n.createElement(n.Fragment,null,n.createElement("h1",{className:"mb-8"},e("Wallet")),n.createElement("p",null,e("Collaborate and level-up.")),n.createElement(r.a,{text:"Transactions",path:"/wallet/transactions"}))}}}]);
-//# sourceMappingURL=component---src-pages-wallet-index-tsx-aeb67e532ddc548e86fc.js.map
