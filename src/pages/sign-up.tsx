@@ -40,7 +40,8 @@ const SignupPage: React.FC = () => {
       <Formik initialValues={ {
           username: '',
           password: '',
-          email: ''
+          email: '',
+          passwordConfirm: ''
         } } onSubmit={onSubmit}>
         <form>
           <TextField name="username" label="Username" />
