@@ -44,13 +44,4 @@ export const plugins = [
       ],
     },
   },
-  // TODO: Update the data source configuration's typeName and fieldName.
-  {
-    resolve: 'gatsby-source-graphql',
-    options: {
-      typeName: 'swapi',
-      fieldName: 'swapi',
-      url: process.env.GATSBY_GRAPHQL_BUILD_ENDPOINT,
-    },
-  },
 ];
