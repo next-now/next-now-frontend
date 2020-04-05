@@ -13,14 +13,23 @@ interface Initiative {
 
 const VoteInitiativePage: React.FC = () => {
   const { t } = useTranslation();
-  const initiativeId: number = Number(window.location.pathname.split('/').pop())
-  const [initiative, setInitiative] = useState({id: initiativeId, category: '', description: ''});
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  const pathNumber = window.location.pathname.split('/').pop();
+  const initiativeId: number = Number(pathNumber);
+  const [initiative, setInitiative] = useState({
+    id: initiativeId,
+    category: '',
+    description: '',
+  });
 
   fetchInitiative(initiativeId, (initiative: Initiative) => {
     initiative.category = initiative.category;
     initiative.description = initiative.description;
-    console.log(initiative)
-  })
+    console.log(initiative);
+  });
 
   const onSubmit = (values: Initiative, actions: any) => {
     setTimeout(() => {
@@ -59,20 +68,26 @@ const VoteInitiativePage: React.FC = () => {
   );
 };
 
-const fetchInitiative = (id: number, callback: (response: Initiative) => void) => {
-    setTimeout(() => {
-        fetch(`http://localhost:3000/api/v0/initiative/${id}`, { // TODO: extract host into an env var
-          method: 'GET',
-          mode: 'cors',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          redirect: 'follow', 
-          referrerPolicy: 'no-referrer'
-        }).then(response => response.json()).then(body => {
-            callback(body);
-        });
-      }, 1000);
-}
+const fetchInitiative = (
+  id: number,
+  callback: (response: Initiative) => void
+) => {
+  setTimeout(() => {
+    fetch(`http://localhost:3000/api/v0/initiative/${id}`, {
+      // TODO: extract host into an env var
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+    })
+      .then(response => response.json())
+      .then(body => {
+        callback(body);
+      });
+  }, 1000);
+};
 
 export default VoteInitiativePage;
