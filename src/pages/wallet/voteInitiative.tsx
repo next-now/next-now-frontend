@@ -14,7 +14,7 @@ interface Initiative {
 const VoteInitiativePage: React.FC = () => {
   const { t } = useTranslation();
   if (typeof window === 'undefined') {
-    return;
+    return <></>;
   }
 
   const pathNumber = window.location.pathname.split('/').pop();
