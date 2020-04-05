@@ -14,11 +14,11 @@ exports.onCreatePage = async ({ page, actions }) => {
       // Possible alternatives:
       //    - https://www.gatsbyjs.org/packages/gatsby-plugin-create-client-paths/
       //    - use NGINX config to always serve up base page
-      if (page.path.match(/^\/wallet/)) {
-        // page.matchPath is a special key that's used for matching pages
-        // with corresponding routes only on the client.
-        page.matchPath = `/${languagePrefix}wallet/*`;
-      }
+      // if (page.path.match(/^\/wallet/)) {
+      //   // page.matchPath is a special key that's used for matching pages
+      //   // with corresponding routes only on the client.
+      //   page.matchPath = `/${languagePrefix}wallet/*`;
+      // }
 
       return createPage({
         ...page,
