@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Formik, Form } from 'formik';
+import { Formik, Form, FormikValues } from 'formik';
 import Button from '../components/Button';
 import Submit from '../components/Submit';
 import TextField from '../components/Formik/TextField/TextField';
@@ -14,9 +14,10 @@ interface LoginValues {
 const LoginPage: React.FC = () => {
   const { t } = useTranslation();
 
-  const onSubmit = (values: LoginValues, actions) => {
+  const onSubmit = (values: LoginValues, actions: FormikValues) => {
     setTimeout(() => {
-      fetch(`http://localhost:3000/api/v0/auth/login`, {
+      actions.setSubmitting(false);
+      return fetch(`http://localhost:3000/api/v0/auth/login`, {
         // TODO: extract host into an env var
         method: 'POST',
         mode: 'cors',
@@ -31,9 +32,8 @@ const LoginPage: React.FC = () => {
         .then(body => {
           localStorage.setItem('token', body.token.token);
           localStorage.setItem('user', JSON.stringify(body.data));
-          navigate('/wallet');
+          return navigate('/wallet');
         });
-      actions.setSubmitting(false);
     }, 1000);
   };
 
