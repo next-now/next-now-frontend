@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Formik, Form } from 'formik';
-import Submit from '../../components/Submit';
+import Submit from '../components/Submit';
 import { navigate } from 'gatsby';
 import { useState } from 'react';
 

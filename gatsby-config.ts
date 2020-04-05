@@ -26,6 +26,8 @@ export const siteMetadata = {
   navigation: [
     { path: '/', label: 'Home' },
     { path: '/wallet', label: 'Wallet' },
+    { path: '/createInitiative/', label: 'Create' },
+    { path: '/voteInitiative/', label: 'Vote' },
     { path: '/dashboard', label: 'Dashboard' },
   ],
 };
