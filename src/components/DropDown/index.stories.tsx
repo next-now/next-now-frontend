@@ -2,7 +2,7 @@ import * as React from 'react';
 import DropDown from './index';
 
 export default {
-  title: 'Components/List',
+  title: 'Components/DropDown',
   component: DropDown,
 };
 
