@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Formik, Form, FormikProps } from 'formik';
+import { Formik, Form } from 'formik';
 import Submit from '../components/Submit';
+import DropDown from '../components/DropDown';
 import TextField from '../components/Formik/TextField/TextField';
 import { navigate } from 'gatsby'
 
-interface CreateInitiativeValues {
+interface Initiative {
   category: string;
   description: string;
 }
@@ -13,7 +14,14 @@ interface CreateInitiativeValues {
 const CreateInitiativePage: React.FC = () => {
   const { t } = useTranslation();
 
-  const onSubmit = (values, actions) => {
+  let initiative: Initiative = {
+    category: '',
+    description: '',
+  }
+
+  const onSubmit = (values: Initiative, actions: any) => {
+    console.log(values)
+    console.log(actions)
     setTimeout(() => {
       fetch(`http://localhost:3000/api/v0/initiatives`, { // TODO: extract host into an env var
         method: 'POST',
@@ -39,13 +47,18 @@ const CreateInitiativePage: React.FC = () => {
           'Choose a category and a description for your initiative.'
         )}
       </p>
-      <Formik initialValues={{
-        category: '',
-        description: '',
-      }} onSubmit={onSubmit}>
+      <label className="text-small font-bold block mb-1 text-gray-600">{t('Initiatives')}</label>
+        <DropDown // Hard-coded for now
+          items={[
+            { name: t("Education") },
+            { name: t("Elderly care") },
+            { name: t("Covid") }
+          ]}
+          onSelect={name => { initiative.category = name; console.log(initiative) }} // TODO: How to properly assign to component state?
+        />
+      <Formik initialValues={initiative} onSubmit={onSubmit}>
         {() => (
         <Form>
-          <TextField name="category" label="Category" />
           <TextField name="description" label="Description" />
           <Submit text="Create initiative" />
         </Form>)}
