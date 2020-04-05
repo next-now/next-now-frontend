@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{QeBL:function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),l=n("9kay"),c=n("B3q3");t.default=function(){var e=Object(l.b)().t;return a.createElement(a.Fragment,null,a.createElement("h1",{className:"mb-8"},e("Welcome")),a.createElement("p",null,e("Collaborate and level-up.")),a.createElement("p",null,a.createElement(c.a,{text:"Login",path:"/login"}),a.createElement(c.a,{text:"Sign up",path:"/sign-up"})))}}}]);
+//# sourceMappingURL=component---src-pages-index-tsx-139a4983f3925737b82d.js.map
