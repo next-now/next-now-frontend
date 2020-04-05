@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Formik, Form, FormikProps } from 'formik';
+import { Formik, Form } from 'formik';
 import Button from '../components/Button';
 import Submit from '../components/Submit';
 import TextField from '../components/Formik/TextField/TextField';
@@ -14,7 +14,7 @@ interface LoginValues {
 const LoginPage: React.FC = () => {
   const { t } = useTranslation();
 
-  const onSubmit = (values, actions) => {
+  const onSubmit = (values: LoginValues, actions) => {
     setTimeout(() => {
       fetch(`http://localhost:3000/api/v0/auth/login`, {
         // TODO: extract host into an env var
