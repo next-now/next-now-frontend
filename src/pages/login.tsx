@@ -17,7 +17,7 @@ const LoginPage: React.FC = () => {
   const onSubmit = (values: LoginValues, actions: FormikValues) => {
     setTimeout(() => {
       actions.setSubmitting(false);
-      return fetch(`http://localhost:3000/api/v0/auth/login`, {
+      return fetch(`http://ec2-18-195-76-27.eu-central-1.compute.amazonaws.com:3000/api/v0/auth/login`, {
         // TODO: extract host into an env var
         method: 'POST',
         mode: 'cors',
