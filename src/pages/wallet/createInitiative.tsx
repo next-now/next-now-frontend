@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Formik, Form } from 'formik';
-import Submit from '../components/Submit';
-import DropDown from '../components/DropDown';
-import TextField from '../components/Formik/TextField/TextField';
+import Submit from '../../components/Submit';
+import DropDown from '../../components/DropDown';
+import TextField from '../../components/Formik/TextField/TextField';
 import { navigate } from 'gatsby';
 import { useState } from 'react';
 
