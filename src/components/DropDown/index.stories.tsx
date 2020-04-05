@@ -8,11 +8,7 @@ export default {
 
 export const Filled = () => (
   <DropDown
-    items={[
-      { name: "Education" },
-      { name: "Elderly care" },
-      { name: "Covid" }
-    ]}
+    items={[{ name: 'Education' }, { name: 'Elderly care' }, { name: 'Covid' }]}
   />
 );
 

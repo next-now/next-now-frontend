@@ -10,8 +10,8 @@ const DropDown: React.FC<{
    */
   items: {
     name: string;
-  }[],
-  onSelect: (name: string) => void
+  }[];
+  onSelect: (name: string) => void;
 }> = ({ items, onSelect }) =>
   items.length ? (
     <nav

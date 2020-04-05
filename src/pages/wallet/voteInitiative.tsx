@@ -14,17 +14,20 @@ const VoteInitiativePage: React.FC = () => {
 
   const onSubmit = (values: Initiative, actions: any) => {
     setTimeout(() => {
-      fetch(`http://localhost:3000/api/v0/vote/${values.id}`, { // TODO: extract host into an env var
+      fetch(`http://localhost:3000/api/v0/vote/${values.id}`, {
+        // TODO: extract host into an env var
         method: 'POST',
         mode: 'cors',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        redirect: 'follow', 
-        referrerPolicy: 'no-referrer'
-      }).then(response => response.json()).then(body => {
-        navigate("/wallet");
-      });
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+      })
+        .then(response => response.json())
+        .then(body => {
+          navigate('/wallet');
+        });
       actions.setSubmitting(false);
     }, 1000);
   };
@@ -33,15 +36,14 @@ const VoteInitiativePage: React.FC = () => {
     <>
       <h1 className="mb-8">{t('Vote for the initiative')}</h1>
       <p className="mb-4">
-        {t(
-          'Please vote for the initiative you decided to participate in.'
-        )}
+        {t('Please vote for the initiative you decided to participate in.')}
       </p>
-      <Formik initialValues={{id: "1"}} onSubmit={onSubmit}>
+      <Formik initialValues={{ id: '1' }} onSubmit={onSubmit}>
         {() => (
-        <Form>
-          <Submit text="Vote for initiative" />
-        </Form>)}
+          <Form>
+            <Submit text="Vote for initiative" />
+          </Form>
+        )}
       </Formik>
     </>
   );
