@@ -44,8 +44,7 @@ const VoteInitiativePage: React.FC = () => {
           'Please vote for the initiative you decided to participate in.'
         )}
       </p>
-      <label className="text-small font-bold block mb-1 text-gray-600">{t('Initiatives')}</label>
-      <Formik initialValues={initiative} onSubmit={onSubmit}>
+      <Formik initialValues={{id: "1"}} onSubmit={onSubmit}>
         {() => (
         <Form>
           <Submit text="Vote for initiative" />
