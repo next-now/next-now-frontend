@@ -4,7 +4,8 @@ import { Formik, Form } from 'formik';
 import Submit from '../components/Submit';
 import DropDown from '../components/DropDown';
 import TextField from '../components/Formik/TextField/TextField';
-import { navigate } from 'gatsby'
+import { navigate } from 'gatsby';
+import { useState } from 'react';
 
 interface Initiative {
   category: string;
@@ -14,14 +15,10 @@ interface Initiative {
 const CreateInitiativePage: React.FC = () => {
   const { t } = useTranslation();
 
-  let initiative: Initiative = {
-    category: '',
-    description: '',
-  }
+  const [initiative, setInitiative] = useState({category: '', description: ''});
 
   const onSubmit = (values: Initiative, actions: any) => {
-    console.log(values)
-    console.log(actions)
+    setInitiative(values)
     setTimeout(() => {
       fetch(`http://localhost:3000/api/v0/initiatives`, { // TODO: extract host into an env var
         method: 'POST',
@@ -54,7 +51,9 @@ const CreateInitiativePage: React.FC = () => {
             { name: t("Elderly care") },
             { name: t("Covid") }
           ]}
-          onSelect={name => { initiative.category = name; console.log(initiative) }} // TODO: How to properly assign to component state?
+          onSelect={name => {
+            initiative.category = name
+          }}
         />
       <Formik initialValues={initiative} onSubmit={onSubmit}>
         {() => (
