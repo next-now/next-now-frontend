@@ -27,7 +27,6 @@ export const siteMetadata = {
     { path: '/', label: 'Home' },
     { path: '/wallet', label: 'Wallet' },
     { path: '/dashboard', label: 'Dashboard' },
-    { path: '/createInitiative', label: 'Create Initiative' },
   ],
 };
 
