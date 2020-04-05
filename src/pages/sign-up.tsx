@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Formik, Form, FormikValues } from 'formik';
+import Submit from '../components/Submit';
 import Button from '../components/Button';
 import TextField from '../components/Formik/TextField/TextField';
 import { navigate } from 'gatsby';
@@ -43,13 +44,15 @@ const SignupPage: React.FC = () => {
           email: '',
           passwordConfirm: ''
         } } onSubmit={onSubmit}>
-        <form>
+        {() => (
+          <Form>
           <TextField name="username" label="Username" />
           <TextField name="email" label="Email" />
           <TextField name="password" label="Password" type="password" />
           <TextField name="passwordConfirm" label="Confirm Password" type="password" />
-          <Button text="Submit" />
-        </form>
+          <Submit text="Login" />
+          </Form>
+        )}
       </Formik>
     </>
   );
