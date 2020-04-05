@@ -13,9 +13,13 @@ interface Initiative {
 
 const VoteInitiative: React.FC = () => {
   const { t } = useTranslation();
-  const initiativeId: number = Number(
-    window.location.pathname.split('/').pop()
-  );
+
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  const pathNumber = window.location.pathname.split('/').pop();
+  const initiativeId: number = Number(pathNumber);
   const [initiative, setInitiative] = useState({
     id: initiativeId,
     category: '',
