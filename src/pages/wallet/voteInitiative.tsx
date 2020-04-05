@@ -33,7 +33,7 @@ const VoteInitiativePage: React.FC = () => {
 
   const onSubmit = (values: Initiative, actions: any) => {
     setTimeout(() => {
-      fetch(`http://ec2-18-195-76-27.eu-central-1.compute.amazonaws.com:3000/api/v0/vote/${values.id}`, {
+      fetch(`https://backend.next-now.site/api/v0/vote/${values.id}`, {
         // TODO: extract host into an env var
         method: 'POST',
         mode: 'cors',
@@ -75,7 +75,7 @@ const fetchInitiative = (
 ) => {
   setTimeout(() => {
     // TODO: extract host into an env var
-    fetch(`http://ec2-18-195-76-27.eu-central-1.compute.amazonaws.com:3000/api/v0/initiative/${id}`, { 
+    fetch(`https://backend.next-now.site/api/v0/initiative/${id}`, { 
       method: 'GET',
       mode: 'cors',
       headers: {

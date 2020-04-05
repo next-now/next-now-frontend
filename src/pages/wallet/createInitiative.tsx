@@ -23,7 +23,7 @@ const CreateInitiativePage: React.FC = () => {
   const onSubmit = (values: Initiative, actions: any) => {
     setInitiative(values);
     setTimeout(() => {
-      fetch(`http://ec2-18-195-76-27.eu-central-1.compute.amazonaws.com:3000/api/v0/initiatives`, {
+      fetch(`https://backend.next-now.site/api/v0/initiatives`, {
         // TODO: extract host into an env var
         method: 'POST',
         mode: 'cors',

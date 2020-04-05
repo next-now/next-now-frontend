@@ -35,7 +35,7 @@ const VoteInitiative: React.FC = () => {
   const onSubmit = (values: Initiative, actions: any) => {
     actions.setSubmitting(false);
     setTimeout(() => {
-      return fetch(`http://localhost:3000/api/v0/vote/${values.id}`, {
+      return fetch(`https://backend.next-now.site/api/v0/vote/${values.id}`, {
         // TODO: extract host into an env var
         method: 'POST',
         mode: 'cors',
@@ -74,7 +74,7 @@ const fetchInitiative = (
   callback: (response: Initiative) => void
 ) => {
   setTimeout(() => {
-    return fetch(`http://localhost:3000/api/v0/initiative/${id}`, {
+    return fetch(`https://backend.next-now.site/api/v0/initiative/${id}`, {
       // TODO: extract host into an env var
       method: 'GET',
       mode: 'cors',

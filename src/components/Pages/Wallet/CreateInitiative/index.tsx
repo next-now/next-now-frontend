@@ -24,7 +24,7 @@ const CreateInitiative: React.FC = () => {
     setInitiative(values);
     actions.setSubmitting(false);
     setTimeout(() => {
-      return fetch(`http://localhost:3000/api/v0/initiatives`, {
+      return fetch(`https://backend.next-now.site/api/v0/initiatives`, {
         // TODO: extract host into an env var
         method: 'POST',
         mode: 'cors',
