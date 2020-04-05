@@ -12,16 +12,10 @@ const Button: React.FC<{
   const { t } = useTranslation();
   return (
     <button
-      className="flex items-center px-3 py-2 m-3 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+      className="flex items-center px-3 py-2 m-3 border rounded text-teal-200 border-teal-400 hover:bg-nextnow-dark hover:text-white hover:border-white"
       type="button"
     >
-      {path ? (
-        <Link to={path} className="hover:bg-gray-100">
-          {t(text)}
-        </Link>
-      ) : (
-        t(text)
-      )}
+      {path ? <Link to={path}>{t(text)}</Link> : t(text)}
     </button>
   );
 };
