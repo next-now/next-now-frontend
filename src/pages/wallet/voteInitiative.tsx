@@ -2,31 +2,24 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Formik, Form } from 'formik';
 import Submit from '../../components/Submit';
-import DropDown from '../../components/DropDown';
-import TextField from '../../components/Formik/TextField/TextField';
 import { navigate } from 'gatsby';
 import { useState } from 'react';
 
 interface Initiative {
-  category: string;
-  description: string;
+  id: string;
 }
 
 const VoteInitiativePage: React.FC = () => {
   const { t } = useTranslation();
 
-  const [initiative, setInitiative] = useState({category: '', description: ''});
-
   const onSubmit = (values: Initiative, actions: any) => {
-    setInitiative(values)
     setTimeout(() => {
-      fetch(`http://localhost:3000/api/v0/initiatives`, { // TODO: extract host into an env var
+      fetch(`http://localhost:3000/api/v0/vote/${values.id}`, { // TODO: extract host into an env var
         method: 'POST',
         mode: 'cors',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(values), 
         redirect: 'follow', 
         referrerPolicy: 'no-referrer'
       }).then(response => response.json()).then(body => {
