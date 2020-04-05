@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{"9Jn0":function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),c=t("9kay");n.default=function(){var e=Object(c.b)().t;return a.createElement(a.Fragment,null,a.createElement("h1",{className:"mb-8"},e("Transactions")),a.createElement("p",null,e("List of all recent transactions.")))}}}]);
-//# sourceMappingURL=component---src-pages-wallet-transactions-tsx-fa3b9edaf3b017a265a4.js.map
