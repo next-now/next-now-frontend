@@ -30074,13 +30074,13 @@ const IndexPage = () => {
   } = Object(react_i18next__WEBPACK_IMPORTED_MODULE_1__["useTranslation"])();
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("h1", {
     className: "mb-8"
-  }, t('Welcome')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", null, t('Collaborate and level-up.')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, t('Welcome')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", null, t('Collaborate and level-up.')), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     text: "Login",
     path: "/login"
   }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     text: "Sign up",
     path: "/sign-up"
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (IndexPage);
