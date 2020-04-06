@@ -23,7 +23,7 @@ const DropDown: React.FC<{
         Main navigation
       </h2>
       <select
-        className="sm:hidden block appearance-none w-full bg-nextnow-dark border-2 border-nextnow-yellow px-3 py-2"
+        className="block appearance-none w-full bg-nextnow-dark border-2 border-nextnow-yellow px-3 py-2"
         onChange={event => onSelect(event.target.value)}
       >
         {items.map(item => (
