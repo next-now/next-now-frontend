@@ -31,26 +31,26 @@ const VoteInitiativePage: React.FC = () => {
   //   console.log(initiative);
   // });
 
-  const onSubmit = (values: Initiative, actions: any) => {
-    setTimeout(() => {
-      fetch(`https://backend.next-now.site/api/v0/vote/${values.id}`, {
-        // TODO: extract host into an env var
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': localStorage.getItem('token')
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer',
-      })
-        .then(response => response.json())
-        .then(body => {
-          navigate('/wallet');
-        });
-      actions.setSubmitting(false);
-    }, 1000);
-  };
+  // const onSubmit = (values: Initiative, actions: any) => {
+  //   setTimeout(() => {
+  //     fetch(`https://backend.next-now.site/api/v0/vote/${values.id}`, {
+  //       // TODO: extract host into an env var
+  //       method: 'POST',
+  //       mode: 'cors',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Authorization': localStorage.getItem('token')
+  //       },
+  //       redirect: 'follow',
+  //       referrerPolicy: 'no-referrer',
+  //     })
+  //       .then(response => response.json())
+  //       .then(body => {
+  //         navigate('/wallet');
+  //       });
+  //     actions.setSubmitting(false);
+  //   }, 1000);
+  // };
 
   return (
     <>

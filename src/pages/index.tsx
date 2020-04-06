@@ -4,6 +4,9 @@ import Button from '../components/Button';
 
 const IndexPage: React.FC = () => {
   const { t } = useTranslation();
+    if (typeof localStorage === 'undefined') {
+        return(<br/>);
+    }
   const isLoggedIn = () => localStorage.getItem('token') !== null;
   return (
     <>

@@ -14,7 +14,9 @@ interface Initiative {
 
 const CreateInitiativePage: React.FC = () => {
   const { t } = useTranslation();
-
+    if (typeof localStorage === 'undefined') {
+        return(<br/>);
+    }
   const [initiative, setInitiative] = useState({
     category: '',
     description: '',
@@ -24,12 +26,11 @@ const CreateInitiativePage: React.FC = () => {
     setInitiative(values);
     setTimeout(() => {
       fetch(`https://backend.next-now.site/api/v0/initiatives`, {
-        // TODO: extract host into an env var
         method: 'POST',
         mode: 'cors',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': localStorage.getItem('token')
+          'Authorization': localStorage.getItem('token') as string
         },
         body: JSON.stringify(values),
         redirect: 'follow',

@@ -10,6 +10,9 @@ import { useCurrentPath } from '../../hooks/current_path';
 const Navigation: React.FC = () => {
   const { t } = useTranslation();
   const currentPath = useCurrentPath();
+  if (typeof localStorage === 'undefined') {
+    return(<br/>);
+  }
 
   const isLoggedIn = () => localStorage.getItem('token') !== null;
   // useStaticQuery allows to execute a query at build time from any component,
