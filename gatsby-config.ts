@@ -24,11 +24,11 @@ export const siteMetadata = {
   url: 'http://localhost',
   // TODO: Adjust the static site navigation or remove it entirely.
   navigation: [
-    { path: '/', label: 'Home' },
-    { path: '/wallet', label: 'Wallet' },
-    { path: '/createInitiative/', label: 'Create' },
-    { path: '/voteInitiative/', label: 'Vote' },
-    { path: '/dashboard', label: 'Dashboard' },
+    { path: '/', label: 'Home', requireLogin: false },
+    { path: '/wallet', label: 'Wallet', requireLogin: true },
+    { path: '/createInitiative/', label: 'Create', requireLogin: true },
+    { path: '/voteInitiative/', label: 'Vote', requireLogin: true },
+    { path: '/dashboard', label: 'Dashboard', requireLogin: false },
   ],
 };
 

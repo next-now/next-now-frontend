@@ -11,6 +11,7 @@ const Navigation: React.FC = () => {
   const { t } = useTranslation();
   const currentPath = useCurrentPath();
 
+  const isLoggedIn = () => localStorage.getItem('token') !== null;
   // useStaticQuery allows to execute a query at build time from any component,
   // but without arguments.
   // https://www.gatsbyjs.org/docs/static-query/#usestaticquery

@@ -8,12 +8,14 @@ import { Link } from 'gatsby';
 const Button: React.FC<{
   text: string;
   path?: string;
-}> = ({ text, path }) => {
+  onClickHandler?: ()=> any;
+}> = ({ text, path, onClickHandler }) => {
   const { t } = useTranslation();
   return (
     <button
       className="flex items-center px-3 py-2 m-3 border rounded text-teal-200 border-teal-400 hover:bg-nextnow-dark hover:text-white hover:border-white"
       type="button"
+      onClick={ onClickHandler? onClickHandler : (() => ({}))}
     >
       {path ? <Link to={path}>{t(text)}</Link> : t(text)}
     </button>

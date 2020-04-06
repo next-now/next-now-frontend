@@ -4,13 +4,22 @@ import Button from '../components/Button';
 
 const IndexPage: React.FC = () => {
   const { t } = useTranslation();
+  const isLoggedIn = () => localStorage.getItem('token') !== null;
   return (
     <>
       <h1 className="mb-8">{t('Welcome')}</h1>
       <p>{t('Collaborate and level-up.')}</p>
       <p>
-        <Button text="Login" path="/login" />
-        <Button text="Sign up" path="/sign-up" />
+          {
+              !isLoggedIn() ? <Button text="Login" path="/login"/> : null
+          }
+          {
+              isLoggedIn() ? <Button text="Logout" path="/home" onClickHandler={() => localStorage.clear()} /> :  null
+
+          }
+          {
+              !isLoggedIn() ? <Button text="Sign up" path="/sign-up" /> : null
+          }
       </p>
     </>
   );
