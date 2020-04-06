@@ -17,7 +17,7 @@ const IndexPage: React.FC = () => {
               !isLoggedIn() ? <Button text="Login" path="/login"/> : null
           }
           {
-              isLoggedIn() ? <Button text="Logout" path="/home" onClickHandler={() => localStorage.clear()} /> :  null
+              isLoggedIn() ? <Button text="Logout" path="/" onClickHandler={() => localStorage.clear()} /> :  null
 
           }
           {
