@@ -17,19 +17,19 @@ const VoteInitiativePage: React.FC = () => {
     return <></>;
   }
 
-  const pathNumber = window.location.pathname.split('/').pop();
-  const initiativeId: number = Number(pathNumber);
-  const [initiative, setInitiative] = useState({
-    id: initiativeId,
-    category: '',
-    description: '',
-  });
+  // const pathNumber = window.location.pathname.split('/').pop();
+  // const initiativeId: number = Number(pathNumber);
+  // const [initiative, setInitiative] = useState({
+  //   id: initiativeId,
+  //   category: '',
+  //   description: '',
+  // });
 
-  fetchInitiative(initiativeId, (initiative: Initiative) => {
-    initiative.category = initiative.category;
-    initiative.description = initiative.description;
-    console.log(initiative);
-  });
+  // fetchInitiative(initiativeId, (initiative: Initiative) => {
+  //   initiative.category = initiative.category;
+  //   initiative.description = initiative.description;
+  //   console.log(initiative);
+  // });
 
   const onSubmit = (values: Initiative, actions: any) => {
     setTimeout(() => {
@@ -58,37 +58,38 @@ const VoteInitiativePage: React.FC = () => {
       <p className="mb-4">
         {t('Please vote for the initiative you decided to participate in.')}
       </p>
-      <Formik initialValues={initiative} onSubmit={onSubmit}>
-        {() => (
-          <Form>
-            <Submit text="Vote for initiative" />
-          </Form>
-        )}
-      </Formik>
+      <p>Coming soon.</p>
+      {/*<Formik initialValues={initiative} onSubmit={onSubmit}>*/}
+      {/*  {() => (*/}
+      {/*    <Form>*/}
+      {/*      <Submit text="Vote for initiative" />*/}
+      {/*    </Form>*/}
+      {/*  )}*/}
+      {/*</Formik>*/}
     </>
   );
 };
 
-const fetchInitiative = (
-  id: number,
-  callback: (response: Initiative) => void
-) => {
-  setTimeout(() => {
-    // TODO: extract host into an env var
-    fetch(`https://backend.next-now.site/api/v0/initiative/${id}`, { 
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-    })
-      .then(response => response.json())
-      .then(body => {
-        callback(body);
-      });
-  }, 1000);
-};
+// const fetchInitiative = (
+//   id: number,
+//   callback: (response: Initiative) => void
+// ) => {
+//   setTimeout(() => {
+//     // TODO: extract host into an env var
+//     fetch(`https://backend.next-now.site/api/v0/initiative/${id}`, {
+//       method: 'GET',
+//       mode: 'cors',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       redirect: 'follow',
+//       referrerPolicy: 'no-referrer',
+//     })
+//       .then(response => response.json())
+//       .then(body => {
+//         callback(body);
+//       });
+//   }, 1000);
+// };
 
 export default VoteInitiativePage;
