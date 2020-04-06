@@ -21,6 +21,7 @@ const Navigation: React.FC = () => {
         navigation: {
           path: string;
           label: string;
+          requireLogin: boolean
         }[];
       };
     };
@@ -31,6 +32,7 @@ const Navigation: React.FC = () => {
           navigation {
             label
             path
+            requireLogin
           }
         }
       }
@@ -52,13 +54,15 @@ const Navigation: React.FC = () => {
         onChange={event => navigate(event.target.value)}
       >
         {items.map(item => (
+            isLoggedIn() || !item.requireLogin ?
           <option key={item.path} value={item.path}>
             {t(item.label)}
-          </option>
-        ))}
+          </option> : null
+        )).filter(item => item !== null)}
       </select>
       <ul className="hidden sm:flex">
         {items.map(item => (
+            isLoggedIn() || !item.requireLogin ?
           <li key={item.path}>
             <Link
               to={item.path}
@@ -71,8 +75,8 @@ const Navigation: React.FC = () => {
             >
               {t(item.label)}
             </Link>
-          </li>
-        ))}
+          </li> : null
+        )).filter(item => item != null)}
       </ul>
     </nav>
   ) : null;
